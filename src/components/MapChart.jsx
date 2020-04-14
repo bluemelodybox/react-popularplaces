@@ -5,7 +5,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 am4core.useTheme(am4themes_animated);
 
-export default function MapChart(props) {
+export default function MapChart({ data }) {
   useEffect(() => {
     // Create chart instance
     var chart = am4core.create("chartdiv", am4maps.MapChart);
@@ -39,11 +39,11 @@ export default function MapChart(props) {
     imageSeries.mapImages.template.tooltipText = "{title}";
 
     var circle = imageSeries.mapImages.template.createChild(am4core.Circle);
-    circle.radius = 4;
+    circle.radius = 8;
     circle.propertyFields.fill = "color";
 
     var circle2 = imageSeries.mapImages.template.createChild(am4core.Circle);
-    circle2.radius = 2;
+    circle2.radius = 3;
     circle2.propertyFields.fill = "color";
 
     circle2.events.on("inited", function (event) {
@@ -56,7 +56,7 @@ export default function MapChart(props) {
           { property: "scale", from: 1, to: 5 },
           { property: "opacity", from: 1, to: 0 },
         ],
-        1000,
+        2000,
         am4core.ease.circleOut
       );
       animation.events.on("animationended", function (event) {
@@ -64,37 +64,7 @@ export default function MapChart(props) {
       });
     }
 
-    imageSeries.data = [
-      {
-        title:
-          "Chong Pang City Wet Market & Food Centre, Yishun \u4e49\u987a\u5fe0\u90a6\u57ce\u6e7f\u5df4\u5239\u4e0e\u719f\u98df\u4e2d\u5fc3",
-        latitude: 1.4316865,
-        longitude: 103.8283361,
-        color: "#0088cc",
-        size: 1,
-      },
-      {
-        title: "Nex",
-        latitude: 1.3507723,
-        longitude: 103.8722585,
-        color: "#DC143C",
-        size: 1,
-      },
-      {
-        title: "Mustafa Centre",
-        latitude: 1.3098393,
-        longitude: 103.8556006,
-        color: "#228B22",
-        size: 2,
-      },
-      {
-        title: "Ion Orchard Mall",
-        latitude: 1.3039937,
-        longitude: 103.8319701,
-        color: "#0088cc",
-        size: 2,
-      },
-    ];
+    imageSeries.data = data;
 
     // Disable drag and resize
     chart.seriesContainer.draggable = false;

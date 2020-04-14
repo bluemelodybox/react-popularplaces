@@ -30,42 +30,48 @@ const styles = {
 };
 
 function App() {
-  const [lastUpdatedTime, setLastUpdatedTime] = useState(0);
+  const [lastUpdatedTime, setLastUpdatedTime] = useState(null);
+  const [mapData, setMapData] = useState([]);
+  const [pageLoading, setPageLoading] = useState(true);
 
   useEffect(() => {
     axios.get("/data/").then((res) => {
-      console.log(res);
       setLastUpdatedTime(res.data.lastUpdatedTime);
+      setMapData(res.data.mapData);
+      setPageLoading(false);
+      console.log(res.data);
+      console.log(mapData);
     });
   }, []);
 
   return (
     <div className="App">
       <SimpleAppBar />
-      <Container maxWidth="xl">
-        <div className="header">
-          <h4 style={{ marginBottom: 0 }}>Map of Singapore showing changes in crowd - Updated every 15 minutes</h4>
-          <h4>Last update: {lastUpdatedTime}</h4>
-        </div>
-        <Grid container spacing={2}>
-          <Grid item lg={7}>
-            <div className="legend">
-              <p style={styles.CircleGreen}></p>
-              <p>Decresasing </p>
-              <p style={{ marginLeft: 16 }}></p>
-              <p style={styles.CircleBlue}></p>
-              <p>No changes</p>
-              <p style={{ marginLeft: 16 }}></p>
-              <p style={styles.CircleRed}></p>
-              <p>Increasing </p>
-              <p style={{ marginLeft: 16 }}></p>
+      {pageLoading ? (
+        <div></div>
+      ) : (
+        <Container maxWidth="xl">
+          <div className="header">
+            <h4 style={{ marginBottom: 0 }}>Map of Singapore showing changes in crowd - Updated every 15 minutes</h4>
+            <h4>Last update: {lastUpdatedTime}</h4>
+          </div>
+          <Grid container spacing={2}>
+            <Grid item lg={7}>
+              <div className="legend">
+                <p style={styles.CircleGreen}></p>
+                <p style={{ marginRight: 16 }}>Decresasing </p>
+                <p style={styles.CircleBlue}></p>
+                <p style={{ marginRight: 16 }}>No changes</p>
+                <p style={styles.CircleRed}></p>
+                <p style={{ marginRight: 16 }}>Increasing </p>
 
-              <p>(Size of data point is relative to location's crowd size)</p>
-            </div>
-            <MapChart />
+                <p>(Size of data point is relative to location's crowd size)</p>
+              </div>
+              <MapChart data={mapData} />
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      )}
     </div>
   );
 }
