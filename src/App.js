@@ -8,6 +8,7 @@ function App() {
   useEffect(() => {
     axios.get("/data/").then((res) => {
       console.log(res);
+      console.log(process.env.GOOGLE_API);
     });
   }, []);
 
