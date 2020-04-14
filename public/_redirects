@@ -1,5 +1,0 @@
-# Fetch from flask
-/data/* https://popularplaces.herokuapp.com/data/:splat 200
-
-# Redirect all path that are not found to homepage
-/* /index.html 200

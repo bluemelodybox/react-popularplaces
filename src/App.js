@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
 
-const axios = require("axios");
+// const axios = require("axios");
 
 function App() {
   // useEffect(() => {
