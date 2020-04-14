@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
+import SimpleMap from "./components/SimpleMap";
 
 const axios = require("axios");
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>test</p>
+      <SimpleMap></SimpleMap>
     </div>
   );
 }
