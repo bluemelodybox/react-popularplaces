@@ -1,20 +1,27 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import SimpleMap from "./components/SimpleMap";
-
+import SimpleAppBar from "./components/SimpleAppBar";
+import { Container, Grid } from "@material-ui/core";
+import MapChart from "./components/MapChart";
 const axios = require("axios");
 
 function App() {
   useEffect(() => {
     axios.get("/data/").then((res) => {
       console.log(res);
-      console.log(process.env.GOOGLE_API);
     });
   }, []);
 
   return (
-    <div className="App">
-      <SimpleMap></SimpleMap>
+    <div>
+      <SimpleAppBar />
+      <Container maxWidth="xl">
+        <Grid container spacing={2}>
+          <Grid item lg={7}>
+            <MapChart />
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   );
 }
