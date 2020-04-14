@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import SimpleAppBar from "./components/SimpleAppBar";
-import { Container, Grid, StylesProvider } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import MapChart from "./components/MapChart";
 const axios = require("axios");
 
