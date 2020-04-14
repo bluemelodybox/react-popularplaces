@@ -66,18 +66,33 @@ export default function MapChart(props) {
 
     imageSeries.data = [
       {
-        title: "Serangoon",
-        latitude: 1.35104,
-        longitude: 103.872323,
+        title:
+          "Chong Pang City Wet Market & Food Centre, Yishun \u4e49\u987a\u5fe0\u90a6\u57ce\u6e7f\u5df4\u5239\u4e0e\u719f\u98df\u4e2d\u5fc3",
+        latitude: 1.4316865,
+        longitude: 103.8283361,
         color: "#0088cc",
         size: 1,
       },
       {
-        title: "Bishan",
-        latitude: 1.351081,
-        longitude: 103.848174,
-        color: "#228B22",
+        title: "Nex",
+        latitude: 1.3507723,
+        longitude: 103.8722585,
+        color: "#DC143C",
         size: 1,
+      },
+      {
+        title: "Mustafa Centre",
+        latitude: 1.3098393,
+        longitude: 103.8556006,
+        color: "#228B22",
+        size: 2,
+      },
+      {
+        title: "Ion Orchard Mall",
+        latitude: 1.3039937,
+        longitude: 103.8319701,
+        color: "#0088cc",
+        size: 2,
       },
     ];
 
@@ -95,5 +110,5 @@ export default function MapChart(props) {
     };
   }, []);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "95vh" }}></div>;
+  return <div id="chartdiv" style={{ width: "100%", height: "86vh" }}></div>;
 }
