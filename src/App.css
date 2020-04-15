@@ -1,12 +1,16 @@
 h1,
 h2,
-h3,
 h4,
-p,
-a {
+p {
   font-family: "Nunito", sans-serif;
   margin-top: 4;
   margin-bottom: 0;
+  color: #334253;
+}
+
+h3 {
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 2;
   color: #334253;
 }
 
@@ -21,10 +25,10 @@ a {
   display: flex;
 }
 
-.cards {
+/* .cards {
   max-height: 83vh;
   overflow: scroll;
 }
 .cards::-webkit-scrollbar {
   display: none;
-}
+} */

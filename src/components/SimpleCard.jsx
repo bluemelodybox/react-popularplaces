@@ -11,16 +11,18 @@ const useStyles = makeStyles({
     padding: 12,
     paddingBottom: 0,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+  red: {
+    minWidth: 275,
+    marginBottom: 4,
+    padding: 12,
+    paddingBottom: 0,
+    background: "#f8d2d2",
   },
   title: {
-    fontSize: 10,
+    // fontSize: 10,
   },
   pos: {
-    marginBottom: 12,
+    // marginBottom: 12,
   },
 });
 
@@ -28,18 +30,19 @@ export default function OutlinedCard({ data }) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined">
-      <Typography variant="h6" component="h2">
-        {data.location}
-      </Typography>
-
-      <Typography className={classes.pos} component="p" display="inline">
-        Current crowd: {data.current}
-      </Typography>
-      <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
-        Previous Crowd: {data.previous}
-      </Typography>
-      <TinyLine data={data.popularity} />
+    <Card className={data.current - data.previous <= 0 ? classes.root : classes.red} variant="outlined">
+      <div>
+        <Typography variant="h6" component="h2">
+          {data.location}
+        </Typography>
+        <Typography component="p" display="inline">
+          Current crowd: {data.current}%
+        </Typography>
+        <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
+          15 mins ago: {data.previous}%
+        </Typography>
+        <TinyLine data={data.popularity} />
+      </div>
     </Card>
   );
 }

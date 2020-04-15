@@ -6,8 +6,8 @@ export default function TinyLine({ data }) {
     <div style={{ height: "8vh", marginBottom: 0 }}>
       <ResponsiveContainer width="50%">
         <LineChart data={data}>
-          <Line type="monotone" dataKey="popularity" stroke="#0088cc" strokeWidth={2} dot={false} />
-          <Tooltip position={{ y: -20 }} />
+          <Line dataKey="popularity" stroke="#0088cc" strokeWidth={2} dot={false} />
+          <Tooltip position={{ y: -10 }} />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -55,11 +55,14 @@ function App() {
       ) : (
         <Container maxWidth="xl">
           <div className="header">
-            <h4 style={{ marginBottom: 0 }}>Map of Singapore showing changes in crowd - Updated every 15 minutes</h4>
+            <h4 style={{ marginBottom: 0 }}>
+              Map of Singapore showing changes in crowd - Data acquired from Google Popular Times, updated every 15
+              minutes
+            </h4>
             <h4>Last update: {lastUpdatedTime}</h4>
           </div>
-          <Grid container spacing={4}>
-            <Grid item lg={8}>
+          <Grid container spacing={1}>
+            <Grid item lg={12}>
               <div className="legend">
                 <p style={styles.CircleGreen}></p>
                 <p style={{ marginRight: 16 }}>Decresasing </p>
@@ -69,11 +72,42 @@ function App() {
                 <p style={{ marginRight: 16 }}>Increasing </p>
                 <p>(Size of data point is relative to location's crowd size)</p>
               </div>
-              <MapChart data={mapData} />
+
+              <div style={{ height: "82vh", overflow: "hidden", marginTop: "2vh" }}>
+                <MapChart data={mapData} />
+              </div>
             </Grid>
-            <Grid item lg={4} style={{ marginTop: "12px" }}>
+            <Grid item lg={12} xs={12}>
+              <h2 align="center">Places of Interest</h2>
+            </Grid>
+            <Grid item lg={3} xs={12} style={{ marginTop: "12px" }}>
+              <h3 align="center">Parks</h3>
               <div className="cards">
-                {lineData.map((item, key) => (
+                {lineData.slice(0, 5).map((item, key) => (
+                  <SimpleCard key={key} data={item} />
+                ))}
+              </div>
+            </Grid>
+            <Grid item lg={3} xs={12} style={{ marginTop: "12px" }}>
+              <h3 align="center">Markets & Food Centers</h3>
+              <div className="cards">
+                {lineData.slice(5, 10).map((item, key) => (
+                  <SimpleCard key={key} data={item} />
+                ))}
+              </div>
+            </Grid>
+            <Grid item lg={3} xs={12} style={{ marginTop: "12px" }}>
+              <h3 align="center">Shopping Malls</h3>
+              <div className="cards">
+                {lineData.slice(10, 15).map((item, key) => (
+                  <SimpleCard key={key} data={item} />
+                ))}
+              </div>
+            </Grid>
+            <Grid item lg={3} xs={12} style={{ marginTop: "12px" }}>
+              <h3 align="center">MRT Stations</h3>
+              <div className="cards">
+                {lineData.slice(15, 20).map((item, key) => (
                   <SimpleCard key={key} data={item} />
                 ))}
               </div>

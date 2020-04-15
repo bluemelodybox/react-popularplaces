@@ -71,7 +71,7 @@ export default function MapChart({ data }) {
     chart.seriesContainer.resizable = false;
 
     // Disable zoom
-    chart.maxZoomLevel = 1;
+    chart.chartContainer.wheelable = false;
 
     return () => {
       if (chart) {
@@ -80,5 +80,5 @@ export default function MapChart({ data }) {
     };
   }, [data]);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "90vh" }}></div>;
+  return <div id="chartdiv" style={{ width: "100%", height: "85vh" }}></div>;
 }
