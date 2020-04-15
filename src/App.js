@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SimpleAppBar from "./components/SimpleAppBar";
 import SimpleCard from "./components/SimpleCard";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Typography } from "@material-ui/core";
 import MapChart from "./components/MapChart";
 
 const axios = require("axios");
@@ -54,31 +54,15 @@ function App() {
         <div></div>
       ) : (
         <Container maxWidth="xl">
-          <div className="header">
-            <h4 style={{ marginBottom: 0 }}>
-              Map of Singapore showing changes in crowd - Data acquired from Google Popular Times, updated every 15
-              minutes
-            </h4>
-            <h4>Last update: {lastUpdatedTime}</h4>
-          </div>
           <Grid container spacing={1}>
-            <Grid item lg={12}>
-              <div className="legend">
-                <p style={styles.CircleGreen}></p>
-                <p style={{ marginRight: 16 }}>Decresasing </p>
-                <p style={styles.CircleBlue}></p>
-                <p style={{ marginRight: 16 }}>No changes</p>
-                <p style={styles.CircleRed}></p>
-                <p style={{ marginRight: 16 }}>Increasing </p>
-                <p>(Size of data point is relative to location's crowd size)</p>
-              </div>
-
-              <div style={{ height: "82vh", overflow: "hidden", marginTop: "2vh" }}>
-                <MapChart data={mapData} />
-              </div>
-            </Grid>
+            <div style={{ position: "absolute", right: 24 }}>
+              <h4>Last update: {lastUpdatedTime}</h4>
+            </div>
             <Grid item lg={12} xs={12}>
               <h2 align="center">Places of Interest</h2>
+              <Typography align="center" variant="body2" color="textSecondary">
+                Data acquired from Google popular times, updated every 15 minutes
+              </Typography>
             </Grid>
             <Grid item lg={3} xs={12} style={{ marginTop: "12px" }}>
               <h3 align="center">Parks</h3>
@@ -110,6 +94,24 @@ function App() {
                 {lineData.slice(15, 20).map((item, key) => (
                   <SimpleCard key={key} data={item} />
                 ))}
+              </div>
+            </Grid>
+            <Grid item lg={12}>
+              <div className="header">
+                <h4 style={{ marginBottom: 0 }}>Map of Singapore showing changes in crowd</h4>
+              </div>
+              <div className="legend">
+                <p style={styles.CircleGreen}></p>
+                <p style={{ marginRight: 16 }}>Decresasing </p>
+                <p style={styles.CircleBlue}></p>
+                <p style={{ marginRight: 16 }}>No changes</p>
+                <p style={styles.CircleRed}></p>
+                <p style={{ marginRight: 16 }}>Increasing </p>
+                <p>(Size of data point is relative to location's crowd size)</p>
+              </div>
+
+              <div style={{ height: "82vh", overflow: "hidden", marginTop: "2vh" }}>
+                <MapChart data={mapData} />
               </div>
             </Grid>
           </Grid>
