@@ -20,3 +20,11 @@ a {
   justify-content: space-between;
   display: flex;
 }
+
+.cards {
+  max-height: 83vh;
+  overflow: scroll;
+}
+.cards::-webkit-scrollbar {
+  display: none;
+}

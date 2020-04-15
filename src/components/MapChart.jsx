@@ -78,7 +78,7 @@ export default function MapChart({ data }) {
         chart.dispose();
       }
     };
-  }, []);
+  }, [data]);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "86vh" }}></div>;
+  return <div id="chartdiv" style={{ width: "100%", height: "90vh" }}></div>;
 }
