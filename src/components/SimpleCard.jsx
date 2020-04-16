@@ -18,12 +18,6 @@ const useStyles = makeStyles({
     paddingBottom: 0,
     background: "#f8d2d2",
   },
-  title: {
-    // fontSize: 10,
-  },
-  pos: {
-    // marginBottom: 12,
-  },
 });
 
 export default function OutlinedCard({ data }) {

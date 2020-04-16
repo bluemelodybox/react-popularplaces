@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SimpleAppBar from "./components/SimpleAppBar";
 import SimpleCard from "./components/SimpleCard";
+import SimpleMap from "./components/SimpleMap";
 import { Container, Grid, Typography } from "@material-ui/core";
 import MapChart from "./components/MapChart";
 
@@ -43,6 +44,7 @@ function App() {
       setMapData(res.data.mapData);
       setLineData(res.data.lineData);
       setPageLoading(false);
+      console.log(process.env);
       console.log(res.data);
     });
   }, []);
@@ -55,9 +57,6 @@ function App() {
       ) : (
         <Container maxWidth="xl">
           <Grid container spacing={1}>
-            {/* <div style={{ position: "absolute", right: 24 }}>
-              
-            </div> */}
             <Grid item lg={12} xs={12}>
               <h2 align="center">Places of Interest</h2>
               <Typography align="center" variant="body2" color="textSecondary">
@@ -113,10 +112,13 @@ function App() {
                 <p style={{ marginRight: 16 }}>Increasing </p>
                 <p>(Size of data point is relative to location's crowd size)</p>
               </div>
-
               <div style={{ height: "82vh", overflow: "hidden", marginTop: "2vh" }}>
                 <MapChart data={mapData} />
               </div>
+            </Grid>
+
+            <Grid item lg={12}>
+              <SimpleMap />
             </Grid>
           </Grid>
         </Container>
