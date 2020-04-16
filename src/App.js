@@ -45,6 +45,7 @@ function App() {
       setLineData(res.data.lineData);
       setPageLoading(false);
       console.log(process.env);
+      console.log(process.env.NODE_GOOGLE_API_KEY);
       console.log(res.data);
     });
   }, []);
