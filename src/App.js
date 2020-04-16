@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SimpleAppBar from "./components/SimpleAppBar";
 import SimpleCard from "./components/SimpleCard";
-import SimpleMap from "./components/SimpleMap";
 import { Container, Grid, Typography } from "@material-ui/core";
 import MapChart from "./components/MapChart";
 
@@ -65,7 +64,7 @@ function App() {
                 Last update: {lastUpdatedTime}
               </Typography>
             </Grid>
-            <Grid item lg={3} xs={12}>
+            <Grid item lg={3} md={6} xs={12}>
               <h3 align="center">Parks</h3>
               <div className="cards">
                 {lineData.slice(0, 5).map((item, key) => (
@@ -73,7 +72,7 @@ function App() {
                 ))}
               </div>
             </Grid>
-            <Grid item lg={3} xs={12}>
+            <Grid item lg={3} md={6} xs={12}>
               <h3 align="center">Markets & Food Centers</h3>
               <div className="cards">
                 {lineData.slice(5, 10).map((item, key) => (
@@ -81,7 +80,7 @@ function App() {
                 ))}
               </div>
             </Grid>
-            <Grid item lg={3} xs={12}>
+            <Grid item lg={3} md={6} xs={12}>
               <h3 align="center">Shopping Malls</h3>
               <div className="cards">
                 {lineData.slice(10, 15).map((item, key) => (
@@ -89,7 +88,7 @@ function App() {
                 ))}
               </div>
             </Grid>
-            <Grid item lg={3} xs={12}>
+            <Grid item lg={3} md={6} xs={12}>
               <h3 align="center">MRT Stations</h3>
               <div className="cards">
                 {lineData.slice(15, 20).map((item, key) => (
@@ -114,10 +113,6 @@ function App() {
               <div style={{ height: "82vh", overflow: "hidden", marginTop: "2vh" }}>
                 <MapChart data={mapData} />
               </div>
-            </Grid>
-
-            <Grid item lg={12}>
-              <SimpleMap />
             </Grid>
           </Grid>
         </Container>

@@ -24,19 +24,17 @@ export default function OutlinedCard({ data }) {
   const classes = useStyles();
 
   return (
-    <Card className={data.current - data.previous <= 0 ? classes.root : classes.red} variant="outlined">
-      <div>
-        <Typography variant="h6" component="h2">
-          {data.location}
-        </Typography>
-        <Typography component="p" display="inline">
-          Current crowd: {data.current}%
-        </Typography>
-        <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
-          15 mins ago: {data.previous}%
-        </Typography>
-        <TinyLine data={data.popularity} />
-      </div>
+    <Card className={data.current - data.previous > 0 ? classes.red : classes.root} variant="outlined">
+      <Typography variant="h6" component="h2">
+        {data.location}
+      </Typography>
+      <Typography component="p" display="inline">
+        Current crowd: {data.current}%
+      </Typography>
+      <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
+        15 mins ago: {data.previous > 100 ? "-" : data.previous}%
+      </Typography>
+      <TinyLine data={data.popularity} />
     </Card>
   );
 }
