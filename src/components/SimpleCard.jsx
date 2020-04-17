@@ -25,9 +25,7 @@ export default function OutlinedCard({ data }) {
 
   return (
     <Card className={data.current - data.previous > 0 ? classes.red : classes.root} variant="outlined">
-      <Typography variant="h6" component="h2">
-        {data.location}
-      </Typography>
+      <Typography component="h1">{data.location}</Typography>
       <Typography component="p" display="inline">
         Current crowd: {data.current}%
       </Typography>
