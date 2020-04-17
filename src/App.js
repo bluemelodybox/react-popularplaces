@@ -83,7 +83,7 @@ function App() {
             <Grid item lg={3} md={6} xs={12}>
               <h3 align="center">Shopping Malls</h3>
               <div className="cards">
-                {lineData.slice(10, 14).map((item, key) => (
+                {lineData.slice(10, 15).map((item, key) => (
                   <SimpleCard key={key} data={item} />
                 ))}
               </div>
