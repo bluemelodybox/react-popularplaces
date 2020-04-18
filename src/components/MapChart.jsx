@@ -80,5 +80,5 @@ export default function MapChart({ data }) {
     };
   }, [data]);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "85vh" }}></div>;
+  return <div id="chartdiv" style={{ width: "100%", height: 600 }}></div>;
 }

@@ -3,7 +3,6 @@ h2,
 h4,
 p {
   font-family: "Nunito", sans-serif;
-  margin-top: 4;
   margin-bottom: 0;
   color: #334253;
 }
@@ -14,21 +13,20 @@ h3 {
   color: #334253;
 }
 
+.table::-webkit-scrollbar {
+  display: none;
+}
+
 .legend p {
-  margin-top: 1;
   display: inline-block;
-  margin-right: 4;
 }
 
 .header {
   justify-content: space-between;
   display: flex;
+  /* float: right; */
 }
 
-/* .cards {
-  max-height: 83vh;
-  overflow: scroll;
+.main-info {
+  /* margin-top: 10; */
 }
-.cards::-webkit-scrollbar {
-  display: none;
-} */

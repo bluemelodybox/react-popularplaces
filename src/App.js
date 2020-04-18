@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SimpleAppBar from "./components/SimpleAppBar";
 import SimpleCard from "./components/SimpleCard";
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid, Typography, Card } from "@material-ui/core";
 import MapChart from "./components/MapChart";
+import TopCard from "./components/TopCard";
+import SortableTable from "./components/SortableTable";
 
 const axios = require("axios");
 
@@ -54,7 +56,37 @@ function App() {
         <div></div>
       ) : (
         <Container maxWidth="xl">
+          <div className="header">
+            <h3 style={{ marginBottom: 10, marginTop: 16 }}>Dashboard of crowd data in Singapore</h3>
+            <p style={{ marginBottom: 10, marginTop: 16, alignItems: "center" }}>Last update: {lastUpdatedTime}</p>
+          </div>
           <Grid container spacing={1}>
+            <Grid item lg={4} xs={12}>
+              <TopCard title="places covered" total={250} />
+            </Grid>
+            <Grid item lg={4} xs={12}>
+              <TopCard title="places with high crowd" total={14} />
+            </Grid>
+            <Grid item lg={4} xs={12}>
+              <TopCard title="places gaining crowd" total={4} />
+            </Grid>
+            <Grid item lg={7}>
+              <h4 style={{ marginTop: 4 }}>Map of Singapore showing areas with high crowd</h4>
+              <div className="legend">
+                <p style={styles.CircleRed}></p>
+                <p style={{ marginRight: 16 }}>High crowd (more than 50%)</p>
+                <p style={styles.CircleBlue}></p>
+                <p style={{ marginRight: 16 }}>Gaining crowd (gain more than 10%)</p>
+              </div>
+              <div style={{ height: 480, overflow: "hidden", marginTop: 16 }}>
+                <MapChart data={mapData} />
+              </div>
+            </Grid>
+            <Grid item lg={5}>
+              <div className="table">
+                <SortableTable />
+              </div>
+            </Grid>
             <Grid item lg={12} xs={12}>
               <h2 align="center">Places of Interest</h2>
               <Typography align="center" variant="body2" color="textSecondary">
@@ -64,55 +96,29 @@ function App() {
                 Last update: {lastUpdatedTime}
               </Typography>
             </Grid>
-            <Grid item lg={3} md={6} xs={12}>
+            <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">Parks</h3>
-              <div className="cards">
-                {lineData.slice(0, 5).map((item, key) => (
-                  <SimpleCard key={key} data={item} />
-                ))}
-              </div>
+              {lineData.slice(0, 5).map((item, key) => (
+                <SimpleCard key={key} data={item} />
+              ))}
             </Grid>
-            <Grid item lg={3} md={6} xs={12}>
+            <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">Markets & Food Centers</h3>
-              <div className="cards">
-                {lineData.slice(5, 10).map((item, key) => (
-                  <SimpleCard key={key} data={item} />
-                ))}
-              </div>
+              {lineData.slice(5, 10).map((item, key) => (
+                <SimpleCard key={key} data={item} />
+              ))}
             </Grid>
-            <Grid item lg={3} md={6} xs={12}>
+            <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">Shopping Malls</h3>
-              <div className="cards">
-                {lineData.slice(10, 15).map((item, key) => (
-                  <SimpleCard key={key} data={item} />
-                ))}
-              </div>
+              {lineData.slice(10, 15).map((item, key) => (
+                <SimpleCard key={key} data={item} />
+              ))}
             </Grid>
-            <Grid item lg={3} md={6} xs={12}>
+            <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">MRT Stations</h3>
-              <div className="cards">
-                {lineData.slice(15, 20).map((item, key) => (
-                  <SimpleCard key={key} data={item} />
-                ))}
-              </div>
-            </Grid>
-            <Grid item lg={12}>
-              <div className="header">
-                <h4 style={{ marginBottom: 0 }}>Map of Singapore showing changes in crowd</h4>
-                <h4>Last update: {lastUpdatedTime}</h4>
-              </div>
-              <div className="legend">
-                <p style={styles.CircleGreen}></p>
-                <p style={{ marginRight: 16 }}>Decresasing </p>
-                <p style={styles.CircleBlue}></p>
-                <p style={{ marginRight: 16 }}>No changes</p>
-                <p style={styles.CircleRed}></p>
-                <p style={{ marginRight: 16 }}>Increasing </p>
-                <p>(Size of data point is relative to location's crowd size)</p>
-              </div>
-              <div style={{ height: "82vh", overflow: "hidden", marginTop: "2vh" }}>
-                <MapChart data={mapData} />
-              </div>
+              {lineData.slice(15, 20).map((item, key) => (
+                <SimpleCard key={key} data={item} />
+              ))}
             </Grid>
           </Grid>
         </Container>

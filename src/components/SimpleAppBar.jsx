@@ -24,7 +24,7 @@ export default function SimpleAppBar() {
       <AppBar position="static">
         <Toolbar variant="dense">
           <Typography variant="h6" className={classes.title}>
-            Dashboard
+            Popular Places
           </Typography>
         </Toolbar>
       </AppBar>
