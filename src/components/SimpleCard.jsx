@@ -25,10 +25,7 @@ export default function OutlinedCard({ data }) {
   console.log(data.popularity[7]["popularity"] - data.popularity[5]["popularity"]);
 
   return (
-    <Card
-      className={data.popularity[7]["popularity"] - data.popularity[5]["popularity"] > 10 ? classes.blue : classes.root}
-      variant="outlined"
-    >
+    <Card className={data.current - data.previous > 5 ? classes.blue : classes.root} variant="outlined">
       <a
         href={`https://maps.google.com/?q=${data.location}`}
         target="_blank"
