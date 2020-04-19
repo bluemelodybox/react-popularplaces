@@ -24,13 +24,13 @@ export default function OutlinedCard({ data }) {
   const classes = useStyles();
 
   return (
-    <Card className={data.current - data.previous > 0 ? classes.red : classes.root} variant="outlined">
+    <Card className={classes.root} variant="outlined">
       <Typography component="h1">{data.location}</Typography>
       <Typography component="p" display="inline">
         Current crowd: {data.current}%
       </Typography>
       <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
-        15 mins ago: {data.previous > 100 ? "-" : data.previous}%
+        15 mins ago: {data.previous === "No previous record" ? "-" : data.previous}%
       </Typography>
       <TinyLine data={data.popularity} />
     </Card>

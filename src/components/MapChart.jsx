@@ -39,11 +39,11 @@ export default function MapChart({ data }) {
     imageSeries.mapImages.template.tooltipText = "{title}";
 
     var circle = imageSeries.mapImages.template.createChild(am4core.Circle);
-    circle.radius = 8;
+    circle.radius = 4.5;
     circle.propertyFields.fill = "color";
 
     var circle2 = imageSeries.mapImages.template.createChild(am4core.Circle);
-    circle2.radius = 3;
+    circle2.radius = 2;
     circle2.propertyFields.fill = "color";
 
     circle2.events.on("inited", function (event) {

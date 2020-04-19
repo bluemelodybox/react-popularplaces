@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Card, Typography } from "@material-ui/core/";
-import TinyLine from "./TinyLine";
 
 const useStyles = makeStyles({
   root: {
@@ -16,28 +15,28 @@ export default function TopCard(props) {
   const classes = useStyles();
   return (
     <Card className={classes.root} variant="outlined">
-      <Typography variant="h4" color="inherit">
+      <Typography variant="h4" color="inherit" display="inline">
         {props.total}
-        <Typography display="inline" variant="h6">
-          {" "}
-          {props.title}
-        </Typography>
+      </Typography>
+      <Typography display="inline" variant="h6">
+        {" "}
+        {props.title}
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Typography variant="body2" style={{ margin: 0 }}>
-            Parks : 5
+            Parks : {props.park}
           </Typography>
           <Typography variant="body2" style={{ margin: 0 }}>
-            Market : 22
+            Shopping Malls : {props.shopping}
           </Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="body2" style={{ margin: 0 }}>
-            Shopping Malls : 5
+            Market / Food Centers : {props.market}
           </Typography>
           <Typography variant="body2" style={{ margin: 0 }}>
-            MRT stations : 22
+            MRT stations : {props.mrt}
           </Typography>
         </Grid>
       </Grid>
