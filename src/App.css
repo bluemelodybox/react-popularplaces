@@ -1,10 +1,15 @@
 h1,
 h2,
 h4,
-p {
+p,
+a {
   font-family: "Nunito", sans-serif;
   margin-bottom: 0;
   color: #334253;
+}
+
+a {
+  text-decoration: inherit; /* no underline */
 }
 
 h3 {
@@ -24,9 +29,4 @@ h3 {
 .header {
   justify-content: space-between;
   display: flex;
-  /* float: right; */
-}
-
-.main-info {
-  /* margin-top: 10; */
 }

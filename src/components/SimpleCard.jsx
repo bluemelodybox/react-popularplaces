@@ -25,7 +25,14 @@ export default function OutlinedCard({ data }) {
 
   return (
     <Card className={classes.root} variant="outlined">
-      <Typography component="h1">{data.location}</Typography>
+      <a
+        href={`https://maps.google.com/?q=${data.location}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ display: "block", fontSize: "20px", marginBottom: 4 }}
+      >
+        {data.location}
+      </a>
       <Typography component="p" display="inline">
         Current crowd: {data.current}%
       </Typography>

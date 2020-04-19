@@ -218,7 +218,15 @@ export default function SortableTable({ rows }) {
                   return (
                     <TableRow hover role="checkbox" tabIndex={-1} key={row["Location"]} selected={isItemSelected}>
                       <TableCell component="th" id={labelId} scope="row" style={{ marginLeft: 8 }}>
-                        {row["Location"]}
+                        <a
+                          href={`https://maps.google.com/?q=${row["Location"]}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ display: "block", fontSize: 14 }}
+                        >
+                          {row["Location"]}
+                        </a>
+                        {/* {row["Location"]} */}
                       </TableCell>
                       <TableCell align="right">{row["Current crowd"]}</TableCell>
                       <TableCell align="right">{row["Crowd changes"]}</TableCell>
