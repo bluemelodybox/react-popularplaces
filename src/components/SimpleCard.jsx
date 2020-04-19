@@ -11,20 +11,24 @@ const useStyles = makeStyles({
     padding: 12,
     paddingBottom: 0,
   },
-  red: {
+  blue: {
     minWidth: 275,
     marginBottom: 4,
     padding: 12,
     paddingBottom: 0,
-    background: "#f8d2d2",
+    background: "#d2e5f8",
   },
 });
 
 export default function OutlinedCard({ data }) {
   const classes = useStyles();
+  console.log(data.popularity[7]["popularity"] - data.popularity[5]["popularity"]);
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card
+      className={data.popularity[7]["popularity"] - data.popularity[5]["popularity"] > 10 ? classes.blue : classes.root}
+      variant="outlined"
+    >
       <a
         href={`https://maps.google.com/?q=${data.location}`}
         target="_blank"
@@ -34,7 +38,11 @@ export default function OutlinedCard({ data }) {
         {data.location}
       </a>
       <Typography component="p" display="inline">
-        Current crowd: {data.current}%
+        Current crowd:
+      </Typography>
+      <Typography component="p" display="inline" color={data.current > 40 ? "error" : "textPrimary"}>
+        {" "}
+        {data.current}%
       </Typography>
       <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
         15 mins ago: {data.previous === "No previous record" ? "-" : data.previous}%
