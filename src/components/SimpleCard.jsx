@@ -22,8 +22,6 @@ const useStyles = makeStyles({
 
 export default function OutlinedCard({ data }) {
   const classes = useStyles();
-  console.log(data.popularity[7]["popularity"] - data.popularity[5]["popularity"]);
-
   return (
     <Card className={data.current - data.previous > 5 ? classes.blue : classes.root} variant="outlined">
       <a
