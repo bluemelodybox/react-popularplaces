@@ -108,9 +108,7 @@ function App() {
                 <p style={{ marginRight: 16 }}>Gaining crowd (more than 5% gain in 15 mins)</p>
               </div>
               <div style={{ height: 480, overflow: "hidden", marginTop: 16 }}>
-                {/* <div>
-                  <MapChart data={mapData} />
-                </div> */}
+                <MapChart data={mapData} />
               </div>
             </Grid>
             <Grid item lg={5}>
