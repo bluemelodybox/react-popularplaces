@@ -17,10 +17,10 @@ const styles = {
     borderRadius: "50%",
     marginRight: 4,
   },
-  CircleBlue: {
+  CircleOrange: {
     height: 12,
     width: 12,
-    backgroundColor: "#0088cc",
+    backgroundColor: "#FF7F50",
     borderRadius: "50%",
     marginRight: 4,
   },
@@ -104,7 +104,7 @@ function App() {
               <div className="legend">
                 <p style={styles.CircleRed}></p>
                 <p style={{ marginRight: 16 }}>High crowd (places with more than 30% crowd)</p>
-                <p style={styles.CircleBlue}></p>
+                <p style={styles.CircleOrange}></p>
                 <p style={{ marginRight: 16 }}>Gaining crowd (more than 5% gain in 15 mins)</p>
               </div>
               <div style={{ height: 480, overflow: "hidden", marginTop: 16 }}>

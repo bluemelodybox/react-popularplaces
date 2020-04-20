@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     marginBottom: 4,
     padding: 12,
     paddingBottom: 0,
-    background: "#d2e5f8",
+    background: "#FFC8B4",
   },
 });
 
