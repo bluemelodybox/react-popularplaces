@@ -99,19 +99,19 @@ function App() {
                 mrt={gainingCrowd["Mrt Station"]}
               />
             </Grid>
-            <Grid item lg={7}>
+            <Grid item lg={6}>
               <h4 style={{ marginTop: 4 }}>Map of Singapore showing areas with high crowd</h4>
               <div className="legend">
                 <p style={styles.CircleRed}></p>
-                <p style={{ marginRight: 16 }}>High crowd (places with more than 50% crowd)</p>
+                <p style={{ marginRight: 16 }}>High crowd (more than 50% crowd)</p>
                 <p style={styles.CircleOrange}></p>
                 <p style={{ marginRight: 16 }}>Gaining crowd (more than 10% gain in 15 mins)</p>
               </div>
-              <div style={{ height: 480, overflow: "hidden", marginTop: 16 }}>
+              <div style={{ height: 480, overflow: "hidden" }}>
                 <MapChart data={mapData} />
               </div>
             </Grid>
-            <Grid item lg={5}>
+            <Grid item lg={6}>
               <div className="table">
                 <SortableTable rows={tableData} />
               </div>

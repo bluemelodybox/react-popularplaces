@@ -43,6 +43,8 @@ function stableSort(array, comparator) {
 const headCells = [
   { id: "Location", numeric: false, disablePadding: true, label: "Location" },
   { id: "Current crowd", numeric: true, disablePadding: false, label: "Current Crowd (%)" },
+  { id: "Usual crowd", numeric: true, disablePadding: false, label: "Usual Crowd (%)" },
+  { id: "Crowd ratio", numeric: true, disablePadding: false, label: "Crowd Ratio (%)" },
   { id: "Crowd changes", numeric: true, disablePadding: false, label: "Crowd Changes (%)" },
   { id: "Type", numeric: false, disablePadding: false, label: "Type" },
 ];
@@ -142,7 +144,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   table: {
-    minWidth: 570,
+    minWidth: "100%",
     maxWidth: 380, // if mobile
   },
   visuallyHidden: {
@@ -229,6 +231,8 @@ export default function SortableTable({ rows }) {
                         {/* {row["Location"]} */}
                       </TableCell>
                       <TableCell align="right">{row["Current crowd"]}</TableCell>
+                      <TableCell align="right">{row["Usual crowd"]}</TableCell>
+                      <TableCell align="right">{row["Crowd ratio"]}</TableCell>
                       <TableCell align="right">{row["Crowd changes"]}</TableCell>
                       <TableCell align="right">{row["Type"]}</TableCell>
                     </TableRow>
