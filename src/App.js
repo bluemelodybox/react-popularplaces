@@ -107,7 +107,7 @@ function App() {
                 <p style={styles.CircleOrange}></p>
                 <p style={{ marginRight: 16 }}>Gaining crowd (more than 10% gain in 15 mins)</p>
               </div>
-              <div style={{ height: 480, overflow: "hidden" }}>
+              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>
                 <MapChart data={mapData} />
               </div>
             </Grid>
