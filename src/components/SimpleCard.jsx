@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 export default function OutlinedCard({ data }) {
   const classes = useStyles();
   return (
-    <Card className={data.current - data.previous > 5 ? classes.blue : classes.root} variant="outlined">
+    <Card className={data.current - data.previous > 10 ? classes.blue : classes.root} variant="outlined">
       <a
         href={`https://maps.google.com/?q=${data.location}`}
         target="_blank"
@@ -35,7 +35,7 @@ export default function OutlinedCard({ data }) {
       <Typography component="p" display="inline">
         Current crowd:
       </Typography>
-      <Typography component="p" display="inline" color={data.current > 40 ? "error" : "textPrimary"}>
+      <Typography component="p" display="inline" color={data.current > 50 ? "error" : "textPrimary"}>
         {" "}
         {data.current}%
       </Typography>
