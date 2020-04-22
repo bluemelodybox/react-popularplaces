@@ -25,7 +25,7 @@ export default function TinyLine({ data }) {
   };
 
   return (
-    <div style={{ height: "8vh", marginBottom: 0 }}>
+    <div style={{ height: "8vh", marginBottom: 8 }}>
       <ResponsiveContainer width="50%">
         <LineChart data={data}>
           <Line dataKey="popularity" stroke="#0088cc" strokeWidth={2} dot={false} />

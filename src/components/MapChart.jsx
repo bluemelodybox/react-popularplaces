@@ -33,10 +33,11 @@ export default function MapChart({ data }) {
 
     // Add image series
     var imageSeries = chart.series.push(new am4maps.MapImageSeries());
+    imageSeries.mapImages.template.propertyFields.longitude = "place";
     imageSeries.mapImages.template.propertyFields.longitude = "longitude";
     imageSeries.mapImages.template.propertyFields.latitude = "latitude";
     imageSeries.mapImages.template.propertyFields.scale = "size";
-    imageSeries.mapImages.template.tooltipText = "{title}";
+    imageSeries.mapImages.template.tooltipText = "{place}";
 
     var circle = imageSeries.mapImages.template.createChild(am4core.Circle);
     circle.radius = 3.5;

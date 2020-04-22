@@ -41,12 +41,12 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-  { id: "Location", numeric: false, disablePadding: true, label: "Location" },
-  { id: "Current crowd", numeric: true, disablePadding: false, label: "Current Crowd (%)" },
-  { id: "Usual crowd", numeric: true, disablePadding: false, label: "Usual Crowd (%)" },
-  { id: "Crowd ratio", numeric: true, disablePadding: false, label: "Crowd Ratio (%)" },
-  { id: "Crowd changes", numeric: true, disablePadding: false, label: "Crowd Changes (%)" },
-  { id: "Type", numeric: false, disablePadding: false, label: "Type" },
+  { id: "place", numeric: false, disablePadding: true, label: "Location" },
+  { id: "current", numeric: true, disablePadding: false, label: "Current Crowd (%)" },
+  { id: "usual", numeric: true, disablePadding: false, label: "Usual Crowd (%)" },
+  { id: "ratio", numeric: true, disablePadding: false, label: "Crowd Ratio (%)" },
+  { id: "changes", numeric: true, disablePadding: false, label: "Crowd Changes (%)" },
+  { id: "type", numeric: false, disablePadding: false, label: "Type" },
 ];
 
 function EnhancedTableHead(props) {
@@ -61,7 +61,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.id === "Location" ? "left" : "right"}
+            align={headCell.id === "place" ? "left" : "right"}
             style={{ marginLeft: 8 }}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -163,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SortableTable({ rows }) {
   const classes = useStyles();
   const [order, setOrder] = React.useState("desc");
-  const [orderBy, setOrderBy] = React.useState("Current crowd");
+  const [orderBy, setOrderBy] = React.useState("current");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(12);
@@ -218,23 +218,22 @@ export default function SortableTable({ rows }) {
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
-                    <TableRow hover role="checkbox" tabIndex={-1} key={row["Location"]} selected={isItemSelected}>
+                    <TableRow hover role="checkbox" tabIndex={-1} key={row.place} selected={isItemSelected}>
                       <TableCell component="th" id={labelId} scope="row" style={{ marginLeft: 8 }}>
                         <a
-                          href={`https://maps.google.com/?q=${row["Location"]}`}
+                          href={`https://maps.google.com/?q=${row.place}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{ display: "block", fontSize: 14 }}
                         >
-                          {row["Location"]}
+                          {row.place}
                         </a>
-                        {/* {row["Location"]} */}
                       </TableCell>
-                      <TableCell align="right">{row["Current crowd"]}</TableCell>
-                      <TableCell align="right">{row["Usual crowd"]}</TableCell>
-                      <TableCell align="right">{row["Crowd ratio"]}</TableCell>
-                      <TableCell align="right">{row["Crowd changes"]}</TableCell>
-                      <TableCell align="right">{row["Type"]}</TableCell>
+                      <TableCell align="right">{row.current}</TableCell>
+                      <TableCell align="right">{row.usual}</TableCell>
+                      <TableCell align="right">{row.ratio}</TableCell>
+                      <TableCell align="right">{row.changes}</TableCell>
+                      <TableCell align="right">{row.type}</TableCell>
                     </TableRow>
                   );
                 })}

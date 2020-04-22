@@ -25,12 +25,12 @@ export default function OutlinedCard({ data }) {
   return (
     <Card className={data.current - data.previous > 10 ? classes.blue : classes.root} variant="outlined">
       <a
-        href={`https://maps.google.com/?q=${data.location}`}
+        href={`https://maps.google.com/?q=${data.place}`}
         target="_blank"
         rel="noopener noreferrer"
         style={{ display: "block", fontSize: "20px", marginBottom: 4 }}
       >
-        {data.location}
+        {data.place}
       </a>
       <Typography component="p" display="inline">
         Current crowd:

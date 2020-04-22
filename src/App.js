@@ -72,31 +72,31 @@ function App() {
             <Grid item lg={4} xs={12}>
               <TopCard
                 title="Places covered"
-                total={placesCovered["Total"]}
-                park={placesCovered["Park"]}
-                market={placesCovered["Market"]}
-                shopping={placesCovered["Shopping Mall"]}
-                mrt={placesCovered["Mrt Station"]}
+                total={placesCovered.total}
+                park={placesCovered.park}
+                market={placesCovered.market}
+                shopping={placesCovered.mall}
+                mrt={placesCovered.mrt}
               />
             </Grid>
             <Grid item lg={4} xs={12}>
               <TopCard
                 title="Places with high crowd"
-                total={highCrowd["Total"]}
-                park={highCrowd["Park"]}
-                market={highCrowd["Market"]}
-                shopping={highCrowd["Shopping Mall"]}
-                mrt={highCrowd["Mrt Station"]}
+                total={highCrowd.total}
+                park={highCrowd.park}
+                market={highCrowd.market}
+                shopping={highCrowd.mall}
+                mrt={highCrowd.mrt}
               />
             </Grid>
             <Grid item lg={4} xs={12}>
               <TopCard
                 title="Places gaining crowd"
-                total={gainingCrowd["Total"]}
-                park={gainingCrowd["Park"]}
-                market={gainingCrowd["Market"]}
-                shopping={gainingCrowd["Shopping Mall"]}
-                mrt={gainingCrowd["Mrt Station"]}
+                total={gainingCrowd.total}
+                park={gainingCrowd.park}
+                market={gainingCrowd.market}
+                shopping={gainingCrowd.mall}
+                mrt={gainingCrowd.mrt}
               />
             </Grid>
             <Grid item lg={6}>
@@ -107,9 +107,7 @@ function App() {
                 <p style={styles.CircleOrange}></p>
                 <p style={{ marginRight: 16 }}>Gaining crowd (more than 10% gain in 15 mins)</p>
               </div>
-              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>
-                <MapChart data={mapData} />
-              </div>
+              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>{/* <MapChart data={mapData} /> */}</div>
             </Grid>
             <Grid item lg={6}>
               <div className="table">
@@ -127,25 +125,25 @@ function App() {
             </Grid>
             <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">Parks</h3>
-              {lineData["Park"].map((item, key) => (
+              {lineData.park.map((item, key) => (
                 <SimpleCard key={key} data={item} />
               ))}
             </Grid>
             <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">Markets & Food Centers</h3>
-              {lineData["Market"].map((item, key) => (
+              {lineData.market.map((item, key) => (
                 <SimpleCard key={key} data={item} />
               ))}
             </Grid>
             <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">Shopping Malls</h3>
-              {lineData["Shopping Mall"].map((item, key) => (
+              {lineData.mall.map((item, key) => (
                 <SimpleCard key={key} data={item} />
               ))}
             </Grid>
             <Grid item lg={3} sm={6} xs={12}>
               <h3 align="center">MRT Stations</h3>
-              {lineData["Mrt Station"].map((item, key) => (
+              {lineData.mrt.map((item, key) => (
                 <SimpleCard key={key} data={item} />
               ))}
             </Grid>
