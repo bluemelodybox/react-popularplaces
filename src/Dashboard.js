@@ -105,11 +105,13 @@ function App() {
               <h4 style={{ marginTop: 4 }}>Map of Singapore showing areas with high crowd</h4>
               <div className="legend">
                 <p style={styles.CircleRed}></p>
-                <p style={{ marginRight: 16 }}>High crowd (more than 50% crowd)</p>
+                <p style={{ marginRight: 16 }}>High crowd</p>
                 <p style={styles.CircleOrange}></p>
-                <p style={{ marginRight: 16 }}>Gaining crowd (more than 10% gain)</p>
+                <p style={{ marginRight: 16 }}>Gaining crowd</p>
               </div>
-              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>{/* <MapChart data={mapData} /> */}</div>
+              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>
+                <MapChart data={mapData} />
+              </div>
             </Grid>
             <Grid item lg={6}>
               <div className="table">
