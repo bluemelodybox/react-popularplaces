@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Button, Toolbar, AppBar } from "@material-ui/core/";
+import { Typography, Button, Toolbar, AppBar, Link } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,9 +22,13 @@ export default function SimpleAppBar() {
       <AppBar position="static">
         <Toolbar variant="dense">
           <Typography variant="h6" className={classes.title}>
-            Popular Places
+            <Link href="/" color="inherit" underline="none">
+              Popular Places{" "}
+            </Link>
           </Typography>
-          <Button color="inherit">FAQ</Button>
+          <Button color="inherit" href="/about">
+            About
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
