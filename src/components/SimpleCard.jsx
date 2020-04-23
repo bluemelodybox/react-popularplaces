@@ -40,7 +40,7 @@ export default function OutlinedCard({ data }) {
         {data.current}%
       </Typography>
       <Typography variant="body2" color="textSecondary" display="inline" style={{ marginLeft: 20 }}>
-        15 mins ago: {data.previous === "No previous record" ? "-" : data.previous}%
+        Usual crowd: {data.usual}%
       </Typography>
       <TinyLine data={data.popularity} />
     </Card>

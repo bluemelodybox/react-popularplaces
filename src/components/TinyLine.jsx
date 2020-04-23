@@ -1,5 +1,5 @@
 import React from "react";
-import { LineChart, Line, Tooltip, ResponsiveContainer } from "recharts";
+import { LineChart, Line, Tooltip, YAxis, ResponsiveContainer } from "recharts";
 
 export default function TinyLine({ data }) {
   const CustomTooltip = ({ active, payload }) => {
@@ -28,8 +28,9 @@ export default function TinyLine({ data }) {
     <div style={{ height: "8vh", marginBottom: 8 }}>
       <ResponsiveContainer width="50%">
         <LineChart data={data}>
-          <Line dataKey="popularity" stroke="#0088cc" strokeWidth={2} dot={false} />
-          <Tooltip content={<CustomTooltip />} position={{ y: -10 }} />
+          <Line dataKey="popularity" stroke="#0088cc" strokeWidth={2} dot={false} isAnimationActive={false} />
+          <YAxis type="number" domain={[0, 80]} hide />
+          <Tooltip content={<CustomTooltip />} position={{ y: 0, x: 180 }} />
         </LineChart>
       </ResponsiveContainer>
     </div>
