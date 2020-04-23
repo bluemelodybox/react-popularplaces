@@ -6,6 +6,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import MapChart from "./components/MapChart";
 import TopCard from "./components/TopCard";
 import SortableTable from "./components/SortableTable";
+import ProgressBar from "./components/ProgressBar";
 
 const axios = require("axios");
 
@@ -60,8 +61,9 @@ function App() {
   return (
     <div className="App">
       <SimpleAppBar />
+
       {pageLoading ? (
-        <div></div>
+        <ProgressBar />
       ) : (
         <Container maxWidth="xl">
           <div className="header">
