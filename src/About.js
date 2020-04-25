@@ -30,9 +30,9 @@ function About() {
               Usual crowd - shows how active a location typically is currently, based on average popularity over the
               past few months.{" "}
             </p>
-            <p>Current crowd - shows how active a location is right now relative to its usual crowd </p>
-            <p>Crowd ratio - shows how active the location is right now compared to its usual level of activity </p>
-            <p>Crowd changes - shows how active percentage change in crowd in the last 15 minutes </p>
+            <p>Current crowd - shows how active a location is right now </p>
+            <p>Crowd ratio - shows how active a location is right now compared to its usual level of activity </p>
+            <p>Crowd changes - shows the percentage change in crowd in the last 15 minutes </p>
           </div>
           <div style={{ marginTop: 60 }}>
             <Typography>
