@@ -39,7 +39,7 @@ export default function Analysis(props) {
     <Fragment>
       <SimpleAppBar />
       <Container maxWidth="xl">
-        <Grid style={style.Grid}>
+        {/* <Grid style={style.Grid}>
           <h3>Analysis for the day 12-04-2020</h3>
           <h3 style={{ marginBottom: 12, marginLeft: 8 }}>Park</h3>
         </Grid>
@@ -53,7 +53,7 @@ export default function Analysis(props) {
         </Grid>
         <Grid style={style.Grid}>
           <h4 style={{ marginBottom: 12, marginLeft: 8 }}>Mall</h4>
-        </Grid>
+        </Grid> */}
       </Container>
     </Fragment>
   );
