@@ -6,6 +6,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import MapChart from "./components/MapChart";
 import TopCard from "./components/TopCard";
 import SortableTable from "./components/SortableTable";
+import SimpleTable from "./components/SimpleTable";
 import ProgressBar from "./components/ProgressBar";
 
 const axios = require("axios");
@@ -109,13 +110,12 @@ function App() {
                 <p style={styles.CircleOrange}></p>
                 <p style={{ marginRight: 16 }}>Gaining crowd</p>
               </div>
-              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>
-                <MapChart data={mapData} />
-              </div>
+              <div style={{ height: 480, overflow: "hidden", marginTop: 24 }}>{/* <MapChart data={mapData} /> */}</div>
             </Grid>
             <Grid item lg={6}>
               <div className="table">
-                <SortableTable rows={tableData} />
+                <SimpleTable data={tableData} />
+                {/* <SortableTable rows={tableData} /> */}
               </div>
             </Grid>
             <Grid item lg={12} xs={12}>
