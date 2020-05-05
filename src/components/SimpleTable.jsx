@@ -71,7 +71,7 @@ export default function SimpleTable({ data }) {
     filter: true,
     filterType: "dropdown",
     rowHover: true,
-    rowsPerPage: 15,
+    rowsPerPage: 10,
     rowsPerPageOptions: [10, 15, 25, 50],
     print: false,
     fixedHeaderOptions: {
