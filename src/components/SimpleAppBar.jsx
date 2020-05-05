@@ -62,12 +62,12 @@ export default function SimpleAppBar() {
           </ListItemIcon>
           <ListItemText primary="Home"></ListItemText>
         </ListItem>
-        {/* <ListItem button component="a" href="/analysis">
+        <ListItem button component="a" href="/analysis">
           <ListItemIcon>
             <TrendingUpRoundedIcon />
           </ListItemIcon>
           <ListItemText primary="Analysis"></ListItemText>
-        </ListItem> */}
+        </ListItem>
       </List>
       <Divider />
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from "react";
 import { Grid, Container, Typography } from "@material-ui/core";
 import SimpleAppBar from "./components/SimpleAppBar";
 import SimpleLine from "./components/SimpleLine";
-import SimpleTable from "./components/SimpleTable";
+import AnalysisTable from "./components/AnalysisTable";
 
 const axios = require("axios");
 const style = {
@@ -40,7 +40,7 @@ export default function Analysis(props) {
       <SimpleAppBar />
       <Container maxWidth="xl">
         <Grid style={style.Grid}>
-          <h3>Analysis for the day 12-2-2020</h3>
+          <h3>Analysis for the day 12-04-2020</h3>
           <h3 style={{ marginBottom: 12, marginLeft: 8 }}>Park</h3>
         </Grid>
         <Grid container spacing={2}>
@@ -48,7 +48,7 @@ export default function Analysis(props) {
             <SimpleLine />
           </Grid>
           <Grid item lg={5} xs={12}>
-            <SimpleTable />
+            <AnalysisTable />
           </Grid>
         </Grid>
         <Grid style={style.Grid}>

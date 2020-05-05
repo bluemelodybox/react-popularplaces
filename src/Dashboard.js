@@ -7,6 +7,7 @@ import MapChart from "./components/MapChart";
 import TopCard from "./components/TopCard";
 import SortableTable from "./components/SortableTable";
 import SimpleTable from "./components/SimpleTable";
+
 import ProgressBar from "./components/ProgressBar";
 
 const axios = require("axios");
@@ -116,7 +117,7 @@ function App() {
             </Grid>
             <Grid item lg={6}>
               <div className="table">
-                <SimpleTable data={tableData} />
+                <SimpleTable data={tableData} title="Popular places" />
               </div>
             </Grid>
             <Grid item lg={12} xs={12}>

@@ -1,7 +1,7 @@
 import React from "react";
 import MUIDataTable from "mui-datatables";
 
-export default function SimpleTable({ data, title }) {
+export default function AnalysisTable({ data, title }) {
   const columns = [
     {
       name: "Location",
@@ -20,7 +20,7 @@ export default function SimpleTable({ data, title }) {
       },
     },
     {
-      name: "Current Crowd (%)",
+      name: "Morning Crowd (%)",
       options: {
         filter: false,
         sortDirection: "desc",
@@ -30,7 +30,7 @@ export default function SimpleTable({ data, title }) {
       },
     },
     {
-      name: "Usual Crowd (%)",
+      name: "Afternoon Crowd (%)",
       options: {
         filter: false,
         setCellHeaderProps: () => ({
@@ -39,7 +39,7 @@ export default function SimpleTable({ data, title }) {
       },
     },
     {
-      name: "Crowd Ratio (%)",
+      name: "Evening Crowd (%)",
       options: {
         filter: false,
         setCellHeaderProps: () => ({
@@ -48,18 +48,9 @@ export default function SimpleTable({ data, title }) {
       },
     },
     {
-      name: "Crowd Changes (%)",
+      name: "Changes (%)",
       options: {
         filter: false,
-        setCellHeaderProps: () => ({
-          style: { fontWeight: "bold", color: "#334253" },
-        }),
-      },
-    },
-    {
-      name: "Type",
-      options: {
-        filter: true,
         setCellHeaderProps: () => ({
           style: { fontWeight: "bold", color: "#334253" },
         }),
